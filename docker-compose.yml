@@ -37,7 +37,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./backend:/app  # For development (hot reload) - remove in prod if desired
+      - ./backend:/app # For development (hot reload) - remove in prod if desired
       - ./uploads:/app/uploads
     networks:
       - genai-network
@@ -54,13 +54,14 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_API_URL=http://54.82.86.123.nip.io:8000
     networks:
       - genai-network
     restart: always
 
 volumes:
   postgres_data:
+
 
 networks:
   genai-network:
