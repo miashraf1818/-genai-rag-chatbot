@@ -15,7 +15,11 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 
 # Install CPU-only PyTorch (Saves ~3GB disk space)
-RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+# Install CPU-only PyTorch (Saves ~3GB disk space)
+# Split installation to reduce peak disk usage during build
+RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir torchvision --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 # Safety check: Remove torch from requirements.txt if present to avoid re-installing GPU version
 RUN sed -i '/torch/d' requirements.txt
