@@ -33,6 +33,35 @@ This project is a RAG (Retrieval-Augmented Generation) chatbot that allows users
 
 ---
 
+## 🏗️ Architecture
+
+```mermaid
+graph TD
+    User[👤 User] -->|HTTPS| Cloudflare[☁️ Cloudflare Tunnel]
+    Cloudflare -->|HTTP| Frontend[🖥️ Next.js Frontend]
+    Frontend -->|API Calls| Backend[⚙️ FastAPI Backend]
+    
+    subgraph AWS EC2
+        Frontend
+        Backend
+        DB[(🐘 PostgreSQL)]
+    end
+    
+    Backend -->|SQL| DB
+    Backend -->|Vectors| Pinecone[(🌲 Pinecone)]
+    Backend -->|Inference| Groq[(⚡ Groq LPU)]
+```
+
+## 🌐 Live Demo
+
+The application is live and accessible via a secure Cloudflare Tunnel:
+
+👉 **[Launch GenAI Chatbot](https://away-lucy-layer-extension.trycloudflare.com)**
+
+*(Note: This is a demo environment running on AWS Free Tier. Initial load might take a few seconds.)*
+
+---
+
 ## 🛠️ Tech Stack
 
 | Component | Technology |
