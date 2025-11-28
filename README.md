@@ -76,6 +76,18 @@ The application is live and accessible via a secure Cloudflare Tunnel:
 ### Secure Login
 ![Login Page](docs/screenshots/login_page.png)
 
+### Chat Interface
+![Chat Welcome](docs/screenshots/chat_welcome.png)
+
+### File Upload & RAG
+![File Upload](docs/screenshots/file_upload.png)
+
+### Admin Dashboard
+![Admin Dashboard](docs/screenshots/admin_dashboard.png)
+
+### User Management
+![User Management](docs/screenshots/user_management.png)
+
 ---
 
 ## 🛠️ Tech Stack
