@@ -67,6 +67,17 @@ services:
       - genai-network
     restart: always
 
+  # Cloudflare Tunnel Service
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: genai_tunnel
+    command: tunnel --url http://frontend:3000
+    restart: unless-stopped
+    depends_on:
+      - frontend
+    networks:
+      - genai-network
+
 volumes:
   postgres_data:
 
