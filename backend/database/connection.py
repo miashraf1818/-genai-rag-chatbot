@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from decouple import config
-from config import DATABASE_URL
+from database.models import Base
 
 DATABASE_URL = config("DATABASE_URL", default="sqlite:///./genai_chatbot.db")
 
