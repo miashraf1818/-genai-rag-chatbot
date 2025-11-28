@@ -2,7 +2,6 @@
 
 A production-ready, full-stack AI chatbot application featuring **Retrieval-Augmented Generation (RAG)**, real-time streaming, and secure user authentication. Built with modern "DevOps" practices using Docker and AWS.
 
-![Project Banner](https://via.placeholder.com/1200x400?text=GenAI+RAG+Chatbot+Dashboard)
 
 ## ✨ Key Features
 
