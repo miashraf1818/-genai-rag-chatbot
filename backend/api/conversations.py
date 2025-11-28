@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from backend.database.connection import get_db
-from backend.database.models import User, Conversation, ChatHistory
-from backend.auth.dependencies import get_current_user
+from database.connection import get_db
+from database.models import User, ChatHistory
+from auth.dependencies import get_current_user
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime

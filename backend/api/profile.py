@@ -1,9 +1,10 @@
+```python
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.orm import Session
-from backend.database.connection import get_db
-from backend.database.models import User
-from backend.auth.dependencies import get_current_user
-from backend.auth.utils import get_password_hash, verify_password
+from database.connection import get_db
+from database.models import User
+from auth.dependencies import get_current_user
+from auth.utils import get_password_hash, verify_password
 from pydantic import BaseModel
 from typing import Optional
 import os

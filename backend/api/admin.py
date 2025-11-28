@@ -5,9 +5,9 @@ from typing import List, Optional
 from datetime import datetime, timedelta
 from pydantic import BaseModel
 
-from backend.database.connection import get_db
-from backend.database.models import User, ChatHistory, AdminAction, UserAnalytics
-from backend.auth.dependencies import require_admin
+from database.connection import get_db
+from database.models import User, ChatHistory, AdminAction, UserAnalytics
+from auth.dependencies import get_current_useradmin
 
 router = APIRouter(prefix="/api/admin", tags=["Admin"])
 

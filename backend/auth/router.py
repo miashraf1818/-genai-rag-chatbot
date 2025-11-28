@@ -1,15 +1,15 @@
 from fastapi import APIRouter, Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session
 from datetime import datetime
-from backend.database.connection import get_db
-from backend.database.models import User
-from backend.auth.schemas import (
+from database.connection import get_db
+from database.models import User
+from auth.schemas import (
     UserRegister, UserLogin, Token, UserResponse,
     UserProfileUpdate, UserProfileResponse
 )
-from backend.auth.utils import verify_password, get_password_hash, create_access_token
-from backend.auth.dependencies import get_current_user
-from backend.utils.email_service import email_service
+from auth.utils import verify_password, get_password_hash, create_access_token
+from auth.dependencies import get_current_user
+from utils.email_service import email_service
 from authlib.integrations.starlette_client import OAuth
 from starlette.config import Config
 from starlette.responses import RedirectResponse

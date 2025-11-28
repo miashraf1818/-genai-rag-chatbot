@@ -2,12 +2,12 @@ from fastapi import FastAPI, WebSocket, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 from sqlalchemy.orm import Session
-from backend.vectorstore.pinecone_utils import get_relevant_context
-from backend.llm.llama_groq import ask_llama_with_context
-from backend.auth.router import router as auth_router
-from backend.auth.dependencies import get_current_user
-from backend.database.models import User, ChatHistory
-from backend.database.connection import get_db
+from vectorstore.pinecone_utils import get_relevant_context
+from llm.llama_groq import ask_llama_with_context
+from auth.router import router as auth_router
+from auth.dependencies import get_current_user
+from database.models import User, ChatHistory
+from database.connection import get_db
 import os
 
 # Fix tokenizers parallelism warning

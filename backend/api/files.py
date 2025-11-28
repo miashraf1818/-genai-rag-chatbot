@@ -1,8 +1,8 @@
 from fastapi import APIRouter, UploadFile, File, Depends, HTTPException
 from sqlalchemy.orm import Session
-from backend.database.connection import get_db
-from backend.database.models import User
-from backend.auth.dependencies import get_current_user
+from database.connection import get_db
+from database.models import User
+from auth.dependencies import get_current_user
 # Lazy import vectorstore to avoid startup errors
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader
