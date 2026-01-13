@@ -174,7 +174,7 @@ oauth.register(
 async def google_login(request: Request):
     """Redirect to Google OAuth"""
     # Callback should go to BACKEND, not frontend!
-    redirect_uri = "http://localhost:8000/auth/google/callback"
+    redirect_uri = config("GOOGLE_REDIRECT_URI")
     return await oauth.google.authorize_redirect(request, redirect_uri)
 
 
